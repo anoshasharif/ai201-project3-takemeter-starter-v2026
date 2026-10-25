@@ -48,40 +48,41 @@
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+### `analysis`
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
-
-### `label_one`
-
-**Definition:**
+**Definition:** A post that supports its main claim with specific facts, numbers, quotes, examples, or a detailed explanation.
 
 **Example 1:**
->
+> Indies and original IP blew up in 2026. More than half of the games that sold more than 500,000 units in their first month were the start of a new series, and 43% were indies.
 
 **Example 2:**
->
+> Planetside 2 devs fix months old crash bug after a user shows them a solution.
 
-### `label_two`
+### `news`
 
-**Definition:**
+**Definition:** A post that primarily reports or announces a gaming-related event, release, update, or development without substantial additional reasoning.
 
 **Example 1:**
->
+> Torchlight II on Steam receives beta update with controller support and crash fixes.
 
 **Example 2:**
->
+> Metal Gear Online 2 (SaveMGO) now has a native PC port.
+
+### `opinion`
+
+**Definition:** A post whose main purpose is to express or relay a judgment, reaction, criticism, or subjective viewpoint rather than simply report information.
+
+**Example 1:**
+> Why a 21-year-old coder finally ported the real P.T. to PC: 'That something so influential could eventually become unplayable never sat right with me.'
+
+**Example 2:**
+> Discord's Second Attempt To Roll Out Age Verification Is Going Badly.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `analysis` and `news`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
-
+**The decision rule I used every time:** If a post only reports what happened, it is `news`. If it goes beyond reporting the event and supports its main point with specific facts, numbers, examples, quotes, or detailed explanation, it is `analysis`.
 
 
 ---
