@@ -92,19 +92,20 @@
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:**  
+I collected public posts from the r/pcgaming subreddit. I stopped at 150 examples based on the milestone's timebox stop rule rather than rushing the remaining 50 examples.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:**  
+I labelled the first 20 posts cold without AI assistance. For the remaining posts, I used AI to help pre-label them, then manually reviewed and checked each label before adding it to the final dataset.
 
 **Counts per label:**
 
 | Label | Count | Share |
-|---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+|---|---:|---:|
+| News | 114 | 76% |
+| Opinion | 22 | 14.7% |
+| Analysis | 14 | 9.3% |
+| **Total** | **150** | **100%** |
 
 **Three hard cases**
 
@@ -112,25 +113,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* Why a 21-year-old coder finally ported the real P.T. to PC: "That something so influential could eventually become unplayable never sat right with me"
 >
-> *Could have been:*
+> *Could have been:* News or Opinion
 >
-> *I chose, because:*
+> *I chose, because:* Opinion, because although the post reports on the PC port, the title focuses heavily on the developer's personal reasoning and perspective.
 
 **2.**
-> *The post:*
+> *The post:* Planetside 2 devs fix months old crash bug after a user shows them a solution
 >
-> *Could have been:*
+> *Could have been:* News or Analysis
 >
-> *I chose, because:*
+> *I chose, because:* Analysis, because although it reports an update, the main focus is a technical problem and how that problem was solved.
 
 **3.**
-> *The post:*
+> *The post:* Cabernet (PC) Review - "This is One of The Best Vampire Games I've Played"
 >
-> *Could have been:*
+> *Could have been:* Opinion or Analysis
 >
-> *I chose, because:*
+> *I chose, because:* Opinion, because a review can contain analysis, but this post focuses on the reviewer's personal judgment of the game.
 
 ---
 
