@@ -51,62 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy of at least 65%
 
-<!-- Your criterion. It must name a number. -->
+The model should achieve at least 65% overall accuracy on the held-out set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** I chose 65% because I have three labels (`analysis`, `news`, and `opinion`), so about 33% would be roughly random guessing. Since some r/pcgaming posts can sit between my categories, especially `analysis` and `news`, I think correctly classifying about two-thirds of unseen posts would be useful.
 
 ---
 
-## 2.
+## 2. Every label has an F1 score of at least 0.60
 
-<!-- Your criterion. -->
+The `analysis`, `news`, and `opinion` labels should each achieve an F1 score of at least 0.60 on the held-out set.
 
-
-
-**Why this target:**
-
-
+**Why this target:** I chose 0.60 because I do not want strong performance on one common label to hide poor performance on another. My `analysis` and `news` labels also have a difficult boundary, so I expect some mistakes between them.
 
 ---
 
-## 3.
+## 3. No label makes up more than 45% of the dataset
 
-<!-- Your criterion. -->
+No single label should account for more than 45% of my labeled examples.
 
-
-
-**Why this target:**
-
-
+**Why this target:** I chose 45% because the three types of posts do not appear equally often in r/pcgaming, but I still want enough examples of `analysis`, `news`, and `opinion` to prevent one label from dominating the training data.
 
 ---
 
-## 4.
+## 4. At least 85% labeling agreement
 
-<!-- Your criterion. -->
+Another person applying my taxonomy to the same posts should agree with my labels at least 85% of the time.
 
-
-
-**Why this target:**
-
-
+**Why this target:** I chose 85% because my three labels have written definitions and I created a specific decision rule for the difficult `analysis` versus `news` boundary. I expect those rules to make most posts consistently classifiable even when some are borderline.
 
 ---
 
-## 5.
+## 5. High-confidence predictions are at least 80% accurate
 
-<!-- Your criterion. -->
+Predictions that the model identifies as high-confidence should be correct at least 80% of the time.
 
-
-
-**Why this target:**
-
+**Why this target:** I chose 80% because posts that clearly fit one of my three definitions should be easier for the model than borderline posts. I expect predictions the model is most confident about to therefore be more accurate than its overall predictions.
 
 
 ---
