@@ -42,7 +42,7 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-
+TakeMeter is a text classifier trained on posts from r/pcgaming. It classifies posts into three categories: news, opinion, and analysis. I collected and labeled the dataset and fine-tuned a DistilBERT model to predict the category of a post.
 
 ---
 
@@ -89,11 +89,8 @@
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
-
 **Where the posts came from:**  
-I collected public posts from the r/pcgaming subreddit. I stopped at 150 examples based on the milestone's timebox stop rule rather than rushing the remaining 50 examples.
+I collected public posts from the r/pcgaming subreddit. My final dataset contains 161 posts. This is below the 200 examples requested by the brief.
 
 **How I labelled them:**  
 I labelled the first 20 posts cold without AI assistance. For the remaining posts, I used AI to help pre-label them, then manually reviewed and checked each label before adding it to the final dataset.
@@ -102,10 +99,10 @@ I labelled the first 20 posts cold without AI assistance. For the remaining post
 
 | Label | Count | Share |
 |---|---:|---:|
-| News | 114 | 76% |
-| Opinion | 22 | 14.7% |
-| Analysis | 14 | 9.3% |
-| **Total** | **150** | **100%** |
+| News | 112 | 69.6% |
+| Opinion | 31 | 19.3% |
+| Analysis | 18 | 11.2% |
+| **Total** | **161** | **100%** |
 
 **Three hard cases**
 
@@ -137,44 +134,30 @@ I labelled the first 20 posts cold without AI assistance. For the remaining post
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** distilbert-base-uncased
 
-**Base model:**
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, seed 42.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Anything I changed from the defaults, and why:** I kept the default training settings.
 
-**Anything I changed from the defaults, and why:**
-
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
-
+**Split sizes:** 112 train / 24 validation / 25 test. The test set contained 17 news, 5 opinion, and 3 analysis posts. Opinion and analysis have very small test sets, so their metrics may vary significantly between seeds.
 
 
 ---
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
+**Moment 1:**
+- *What I asked for:* I asked AI to help classify Reddit posts as news, opinion, or analysis.
+- *What came back:* AI suggested labels for the posts based on my label definitions.
+- *What I changed:* I reviewed the suggested labels myself and corrected them when necessary before adding them to my dataset.
 
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
+**Moment 2:**
+- *What I asked for:* I asked AI to help me understand errors and warnings while preparing and running the training notebook.
+- *What came back:* AI explained issues such as duplicate posts, label imbalance, and the notebook's training output.
+- *What I changed:* I removed duplicate data, reviewed my label distribution, and followed the notebook requirements before training.
 
-**Moment 1**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
-**Moment 2**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** I labeled my first 20 posts cold. AI was then used to pre-label additional posts, but I manually reviewed and checked the labels before using them.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
