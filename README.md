@@ -173,20 +173,23 @@ I labelled the first 20 posts cold without AI assistance. For the remaining post
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.240 | 0.680 | +0.440 |
+| Macro F1 | 0.330 | 0.270 | -0.060 |
+| F1 — `analysis` | 0.240 | 0.000 | -0.240 |
+| F1 — `news` | 0.000 | 0.810 | +0.810 |
+| F1 — `opinion` | 0.750 | 0.000 | -0.750 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
+**Prediction:** I predict that my trained model will perform better than the baseline, especially on distinguishing news from analysis, because it was fine-tuned on posts labeled using my specific taxonomy.
+
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
-
+The trained model had much higher overall accuracy than the baseline, improving from 0.240 to 0.680. However, its macro F1 was slightly lower because it performed very well on news but failed to correctly identify opinion and analysis posts. This suggests that fine-tuning helped the model learn the majority news label, but it did not learn the smaller classes well.
 
 ---
 

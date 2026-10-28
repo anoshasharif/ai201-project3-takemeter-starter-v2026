@@ -1,0 +1,159 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 25,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 25,
+    "accuracy": 0.24,
+    "f1_macro": 0.32999999999999996,
+    "per_label": {
+      "analysis": {
+        "precision": 0.13636363636363635,
+        "recall": 1.0,
+        "f1": 0.24000000000000002,
+        "support": 3
+      },
+      "news": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 17
+      },
+      "opinion": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "European age-ratings body PEGI begins raising age-limit of loot box games, like EA Sports FC, to 16",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Kingdom Come: Deliverance studio co-founder says a lot of RPGs are 'still games for teenagers,' and that he's 'tired of all the RPGs where you are this chosen one'",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Indie game 'Ebbtide' reaches 100k wishlists 'Lead the last carrier task force through a world overrun by zombies. Command your forces on the operations map, then zoom into battle and take control yourself'",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "INCORCISM Interview: Game Designer Sascha Ulreich Shares New Info on Upcoming Game - Power Up Gaming",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "WoW: Forever's classes won't be modernized, but Blizzard has added some new mechanics for 'engaging depth' as 'some classes' in World of Warcraft Classic 'were too simple'",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "I've spent two years making a Doom-meets-Hotline Miami horror shooter named 'BLOODVILLE' while in college, and it drops in two weeks.",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Morally Bankrupt Games Announces Launcher that's 'Even Faster Than Epic's'",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Game Industry Asks U.S. to Flag Denuvo Cracker 'voices38' as Notorious Piracy Threat",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "HUMANKIND 2 - Gameplay Overview",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Exciting History of Movement in Counter-Strike | 3kliksphilip",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "You Should Switch To Single Player / Co-Op. It Will Most Likely Save Your Mental",
+      "gold": "opinion",
+      "predicted": "analysis"
+    },
+    {
+      "text": "I released an alpha demo for my game Figleaf :)",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "One of the biggest game decompilation sites is closing because AI has \"broken the community aspect\"",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "What mouse button bindings do you swear by?",
+      "gold": "opinion",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Demands for AI Filter on Steam Grow as Next Fest Is Flooded with AI Slop",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Dead Space Remake's Infamous Traversal Stutters Finally Tamed By Ishimura Patch Mod \u2014 Our Tests Show 176% Higher 0.1% Lows",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Tidy Pills - Cozy Tidy game where you organize a Pharmacy. Steam Demo Out",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "NVIDIA reportedly discontinuing RTX 5090_GB202 GPUs to be reserved for RTX PRO series",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Won't all game developers think twice about making a game now after this reverse engineering spree?",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Epic Games Delays Disney Project, Asks Developers to Use More AI",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "AMD FSR Upscaling 4.1 for Desktop, Laptop, Handheld and Console",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "DOOBAK - Announcement trailer for a co-op game about digging snow tunnels in a village buried by snow",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The Milgram Experiment Official Trailer",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Dragon's Dogma 2: Dark Arisen - Launch Trailer",
+      "gold": "news",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Wine (for Linux) might mark dgvoodoo2 as WONTFIX due to malicious and intentional sabotage by developer to not run via Wine",
+      "gold": "news",
+      "predicted": "analysis"
+    }
+  ]
+}

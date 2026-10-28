@@ -8,3 +8,7 @@
 analysis: makes an argument backed by a specific, checkable fact
 hot_take: a confident claim with no support offered
 reaction: an immediate response to something that just happened
+
+analysis: A post that supports its main claim with specific facts, numbers, quotes, examples, or a detailed explanation.
+news: A post that primarily reports or announces a gaming-related event, release, update, or development without substantial additional reasoning.
+opinion: A post whose main purpose is to express or relay a judgment, reaction, criticism, or subjective viewpoint rather than simply report information.
