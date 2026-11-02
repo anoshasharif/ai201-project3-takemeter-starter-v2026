@@ -211,17 +211,14 @@ The trained model had much higher overall accuracy than the baseline, improving 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | news | opinion | analysis |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **news** | 17 | 0 | 0 |
+| **opinion** | 5 | 0 | 0 |
+| **analysis** | 3 | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
-
+The biggest confusion was 5 real `opinion` posts being predicted as `news`, while 0 real `news` posts were predicted as `opinion`. This shows that the model strongly leans toward predicting `news` rather than distinguishing the two labels.
 
 
 ---
