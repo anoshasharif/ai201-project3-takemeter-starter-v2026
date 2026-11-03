@@ -200,11 +200,11 @@ The trained model had much higher overall accuracy than the baseline, improving 
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.680 | 0.680 | 0.680 | Met |
+| 2. Every label F1 | ≥ 0.60 each | News: 0.810; Opinion: 0.000; Analysis: 0.000 | News: 0.810; Opinion: 0.000; Analysis: 0.000 | News: 0.810; Opinion: 0.000; Analysis: 0.000 | Missed |
+| 3. No label over 45% of dataset | ≤ 45% | N/A | N/A | N/A | Missed — News is 69.6% of dataset |
+| 4. Labeling agreement | ≥ 85% | 100% | 100% | 100% | Met |
+| 5. High-confidence accuracy | ≥ 80% | 1.000 | 0.875 | 1.000 | Met |
 
 ### Confusion matrix
 
@@ -230,11 +230,11 @@ The biggest confusion was 5 real `opinion` posts being predicted as `news`, whil
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 | MET | Accuracy was 0.680 for all three seeds, which is above the 0.65 target. |
+| 2 | Every label F1 | ≥ 0.60 each | MISSED | News had an F1 of 0.810, but opinion and analysis both had an F1 of 0.000 across all three seeds. |
+| 3 | No label over 45% of dataset | ≤ 45% | MISSED | News makes up 69.6% of my dataset, which is above the 45% maximum. |
+| 4 | Labeling agreement | ≥ 85% | MET | I matched the staff labels on all 30 posts, giving me 100% agreement. |
+| 5 | High-confidence accuracy | ≥ 80% | MET | High-confidence accuracy was 1.000, 0.875, and 1.000 across the three seeds, all above 0.80. |
 
 **Diagnoses**
 
@@ -247,7 +247,13 @@ The biggest confusion was 5 real `opinion` posts being predicted as `news`, whil
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+**Criterion 2 — Every label F1: MISSED**
 
+The main cause was too few examples for the minority labels and an imbalanced dataset. News had an F1 of 0.810 across all three seeds, while opinion and analysis both had an F1 of 0.000. The confusion matrix shows that all 5 opinion posts and all 3 analysis posts in the test set were predicted as news. My agreement check was 100% (30/30), so it does not provide evidence that inconsistent application of written labeling rules was the main problem. Instead, the results point more strongly to class imbalance and too few examples of opinion and analysis.
+
+**Criterion 3 — No label over 45% of dataset: MISSED**
+
+The cause was class imbalance in my collected dataset. News accounts for 69.6% of my examples, which is far above my 45% target. This also helps explain the model's behavior in the confusion matrix, where it predicted every test example as news. My 100% staff-label agreement suggests that I can apply a clearly written taxonomy consistently, so the stronger evidence here is that I collected too many news examples and too few examples of the minority labels.
 
 ---
 
@@ -259,7 +265,7 @@ The biggest confusion was 5 real `opinion` posts being predicted as `news`, whil
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+****Agreement rate:** 30 / 30 = 100%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -281,27 +287,9 @@ The biggest confusion was 5 real `opinion` posts being predicted as `news`, whil
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
+There were no disagreements. I matched the staff labels on all 30 posts.
 
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**What the pattern in my disagreements tells me:**
-
-
+I found the staff set relatively easy to apply because the definitions and decision rules clearly distinguished analysis, hot takes, and reactions. The rules were especially helpful for determining whether a fact was actually supporting an argument or was simply included alongside an unsupported claim.
 
 ---
 
@@ -309,36 +297,35 @@ The biggest confusion was 5 real `opinion` posts being predicted as `news`, whil
 
 **What I changed:**
 
+I added more examples from the minority classes to improve the class imbalance in my dataset, with a focus on adding more analysis examples.
+
 **Which diagnosis pointed at it:**
+
+The before results showed that the model was predicting everything as news. News had an F1 score of 0.810, while opinion and analysis both had an F1 score of 0.000. The dataset was also heavily imbalanced toward news, which made up 69.6% of the original dataset.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.654 | 0.654 | 0.654 | Met |
+| 2. Every label F1 | ≥ 0.60 each | News 0.791; Opinion 0.000; Analysis 0.000 | News 0.791; Opinion 0.000; Analysis 0.000 | News 0.791; Opinion 0.000; Analysis 0.000 | Missed |
+| 3. No label over 45% of dataset | ≤ 45% | N/A | N/A | N/A | Missed |
+| 4. Labeling agreement | ≥ 85% | N/A | N/A | N/A | See agreement check |
+| 5. High-confidence accuracy | ≥ 80% | 1.000 | 1.000 | 1.000 | Met |
 
 **Did it help, and how do I know:**
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
-
-
+No. The improvement did not improve the model's performance. Accuracy decreased from 0.680 before the change to 0.654 after the change, and macro F1 decreased from 0.270 to 0.264. Opinion and analysis F1 also remained at 0.000 across all three seeds. This shows that adding minority-class examples alone was not enough for the model to learn those labels.
 
 ---
 
 ## What's Still Broken
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+The model still fails to distinguish opinion and analysis from news. Both minority labels still have an F1 score of 0.000. I would next add substantially more high-quality opinion and analysis examples and work toward a more balanced dataset. I stopped after this improvement because the assignment required testing one targeted improvement and comparing its results against the original model.
 
+**The gap between what I meant my labels to capture and what the model learned:**
 
-
-**The gap between what I meant my labels to capture and what the model
-learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
+I intended the labels to distinguish reporting, subjective viewpoints, and evidence-based analysis. However, the model learned to rely heavily on the majority news label, as shown by the confusion matrix and the 0.000 F1 scores for both opinion and analysis.
 
 
 
