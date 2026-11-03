@@ -1,13 +1,13 @@
 {
   "seed": 42,
-  "n_test": 25,
-  "accuracy": 0.68,
-  "f1_macro": 0.2698412698412698,
+  "n_test": 26,
+  "accuracy": 0.6538461538461539,
+  "f1_macro": 0.2635658914728682,
   "per_label": {
     "news": {
-      "precision": 0.68,
+      "precision": 0.6538461538461539,
       "recall": 1.0,
-      "f1": 0.8095238095238095,
+      "f1": 0.7906976744186046,
       "support": 17
     },
     "opinion": {
@@ -20,7 +20,7 @@
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
-      "support": 3
+      "support": 4
     }
   },
   "confusion": {
@@ -35,16 +35,16 @@
       "analysis": 0
     },
     "analysis": {
-      "news": 3,
+      "news": 4,
       "opinion": 0,
       "analysis": 0
     }
   },
   "confidence": {
-    "mean_when_right": 0.6278210878372192,
-    "mean_when_wrong": 0.5779270529747009,
+    "mean_when_right": 0.6666038036346436,
+    "mean_when_wrong": 0.6064081788063049,
     "accuracy_most_confident_third": 1.0,
-    "accuracy_least_confident_third": 0.5,
+    "accuracy_least_confident_third": 0.25,
     "n_per_third": 8
   },
   "device": "cpu",
