@@ -42,7 +42,7 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-TakeMeter is a text classifier trained on posts from r/pcgaming. It classifies posts into three categories: news, opinion, and analysis. I collected and labeled the dataset and fine-tuned a DistilBERT model to predict the category of a post.
+TakeMeter is a text classifier trained on posts from the r/pcgaming community. It sorts posts into three categories: news, opinion, and analysis. I collected and labeled the dataset, then fine-tuned a DistilBERT model to predict which category a post belongs to. I evaluated the model across multiple seeds and compared its performance against an untrained baseline.
 
 ---
 
@@ -148,16 +148,18 @@ I labelled the first 20 posts cold without AI assistance. For the remaining post
 ## How I Used AI
 
 **Moment 1:**
-- *What I asked for:* I asked AI to help classify Reddit posts as news, opinion, or analysis.
-- *What came back:* AI suggested labels for the posts based on my label definitions.
-- *What I changed:* I reviewed the suggested labels myself and corrected them when necessary before adding them to my dataset.
+- *What I asked for:* I asked AI to help pre-label Reddit posts as news, opinion, or analysis using my label definitions.
+- *What came back:* AI suggested labels for posts based on the distinctions in my taxonomy.
+- *What I changed:* I manually reviewed the suggested labels and corrected them when necessary before adding them to my dataset.
 
 **Moment 2:**
-- *What I asked for:* I asked AI to help me understand errors and warnings while preparing and running the training notebook.
-- *What came back:* AI explained issues such as duplicate posts, label imbalance, and the notebook's training output.
-- *What I changed:* I removed duplicate data, reviewed my label distribution, and followed the notebook requirements before training.
+- *What I asked for:* I asked AI to help me interpret my model's training results, confusion matrix, and errors.
+- *What came back:* AI helped identify the model's strong bias toward predicting news and the poor performance of the minority opinion and analysis classes.
+- *What I changed:* I used those results to choose my improvement of adding more minority-class examples and then retrained the model to test whether the change helped.
 
-**Pre-labelling disclosure:** I labeled my first 20 posts cold. AI was then used to pre-label additional posts, but I manually reviewed and checked the labels before using them.
+**Pre-labelling disclosure:** I labeled my first 20 posts cold without AI assistance. After that, I used AI to pre-label additional posts, but I manually reviewed the suggested labels before including them in my dataset.
+
+
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
